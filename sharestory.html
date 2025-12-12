@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Share Your Story</title>
+  <link rel="stylesheet" href="storypage.css">
+</head>
+<body>
+  <h3>“Everyone has a story that can inspire others. Share yours and make a difference.”</h3>
+
+  <form onsubmit="saveStory(event)">
+    <label for="name">Your Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="story">Your Story:</label><br>
+    <textarea id="story" name="story" rows="10" cols="50" required></textarea><br><br>
+
+    <button type="submit">Submit Story</button>
+  </form>
+
+  <script>
+    function saveStory(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const text = document.getElementById("story").value;
+
+      // remember who just submitted
+      localStorage.setItem("currentUserName", name);
+
+      const stories = JSON.parse(localStorage.getItem("stories") || "[]");
+
+      // give each story an id
+      const id = Date.now();
+
+      stories.push({ id, name, text });
+      localStorage.setItem("stories", JSON.stringify(stories));
+
+      window.location.href = "storypage.html";
+    }
+  </script>
+</body>
+</html>

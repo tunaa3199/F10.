@@ -1,0 +1,24 @@
+button {
+   background-color: pink;
+   background-image: linear-gradient(90deg, rgb(253, 130, 130), pink);
+   font-family: 'Times New Roman', Times, serif;
+   text-align: center;
+   display: block;
+   margin: 0 auto;
+}
+
+
+h1 {
+    background-image: linear-gradient(red, pink);
+   color: transparent;
+   background-clip: text;
+}
+h1, h3, p {
+   text-align: center;
+}
+body {
+   background-image: url('rabbit2wallpaper.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+}

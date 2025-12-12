@@ -1,0 +1,40 @@
+h1 {
+        color: black;
+        text-align: center
+    }
+
+h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h3 {
+    border: 2px rgb black solid;
+    border-radius: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 400px;
+    margin-right: 400px;
+    text-align: center;
+}
+
+h4{
+   border: 2px black solid;
+   border-radius: 15px;
+    padding-top: 30px;
+   padding-bottom: 30px;
+   margin-top: 30px;
+    margin-left: 200px;
+   margin-right: 200px;
+   text-align: center;
+}
+
+body {
+    background-color: rgb(246, 221, 225)
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+}

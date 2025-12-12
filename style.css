@@ -1,0 +1,33 @@
+body{
+    background-color:rgb(246, 221, 225)
+}
+h1, h2, h3, h4 {
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 0px;
+}
+.myButton {
+    background-color: rgb(222, 130, 146);
+    color: rgb(37, 1, 1);
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.myButton:hover {
+  background-color: #80b5ff;
+}
+
+.box{
+    border: 2px solid black;
+    width: 950px;
+    height: 60px;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    background-color: #dbebf8
+}

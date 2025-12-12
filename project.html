@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Our Project</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <h1>We have a message for you...</h1>
+      <img id="closedEnvelope"
+      src="IMG_6354.png" width="450">
+      <button class="myButton" id="Open Envelope!" onclick="changeImageAndRemove(this)">Open Envelope!</button>
+      <script>
+        document.getElementById('Open Envelope!').addEventListener('click',function(){
+       
+          document.getElementById("closedEnvelope").src = 'IMG_6358.png';
+          this.remove();
+        });  
+      </script>
+
+      <a href="Page4.html">
+      <button class="myButton" id="Read Letter">Read Letter</button> 
+      </a>
+      
+      <script>
+        
+      let button = document.getElementById("Open Envelope!");
+      let output = document.getElementById("Read Letter");
+      output.style.display = 'none';
+          button.addEventListener("click",function(){
+            output.style.display = "block";
+          });
+      </script>
+
+
+    </body>
+</html>

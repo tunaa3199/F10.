@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <h1>Motivational Stories</h1>
+  <link rel="stylesheet" type="text/css" href="storypage.css">
+</head>
+<body>
+  <h4>
+    “Your hardest times often lead to the greatest moments of your life. Keep going.” - Roy T. Bennett.
+  </h4>
+
+  <h2>Nick Vujicic</h2>
+  <h3>
+    Nick Vujicic was born without arms and legs, facing immense challenges from the start. Instead of succumbing to despair, he embraced his uniqueness and became a world-renowned motivational speaker. His story emphasizes self-acceptance, hope, and the belief that true strength comes from within. Nick inspires millions by encouraging them to see beyond their limitations and pursue their dreams with determination.
+  </h3>
+
+  <h2>Raj</h2>
+  <h3>
+    In a small village, a boy named Raj faced financial hardships that threatened his dream of becoming a doctor. Undeterred, he took on odd jobs to save money for his education. His hard work caught the attention of a local doctor, who offered him a part-time job. Raj's persistence paid off when he secured a scholarship for medical school. After graduating, he returned to his village to open a free clinic, inspiring others with his dedication and perseverance.
+  </h3>
+
+  <h2>
+    Inspire someone today. Your experience could be the encouragement they've been waiting for.
+  </h2>
+
+  <a href="sharestory.html">
+    <button type="button">Click Me!</button>
+  </a>
+
+  <div id="user-stories"></div>
+
+  <script>
+    const container = document.getElementById("user-stories");
+    let stories = JSON.parse(localStorage.getItem("stories") || "[]");
+
+    function renderStories() {
+      container.innerHTML = "";
+      stories.forEach(s => {
+        const block = document.createElement("div");
+        block.innerHTML = `
+          <h3>${s.name}</h3>
+          <p>${s.text}</p>
+        `;
+
+        const btn = document.createElement("button");
+        btn.textContent = "Delete";
+        btn.onclick = function () {
+          deleteStory(s.id);
+        };
+        block.appendChild(btn);
+
+        const hr = document.createElement("hr");
+        block.appendChild(hr);
+
+        container.appendChild(block);
+      });
+    }
+
+    function deleteStory(id) {
+      stories = stories.filter(s => s.id !== id);
+      localStorage.setItem("stories", JSON.stringify(stories));
+      renderStories();
+    }
+
+    renderStories();
+  </script>
+</body>
+</html>
